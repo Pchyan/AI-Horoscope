@@ -93,7 +93,7 @@ function parseColor(color) {
 
 // 解析 luckyColor 欄位，取得顏色名與 CSS 色碼
 function extractColorInfo(luckyColor) {
-  if (!luckyColor) return { name: '', code: '' };
+  if (!luckyColor || typeof luckyColor !== 'string') return { name: '', code: '' };
   // 支援「草綠色 (#32CD32)」或「粉紅（#FFC0CB）」等格式
   const match = luckyColor.match(/([\u4e00-\u9fa5A-Za-z]+)[\s\(（]*#?([0-9A-Fa-f]{6,8})?[\)）]?/);
   if (match) {

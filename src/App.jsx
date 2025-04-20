@@ -52,7 +52,9 @@ function App() {
       <Toaster position="top-center" toastOptions={{ duration: 2500 }} />
       <div className="w-full max-w-md p-6 bg-white/80 dark:bg-gray-800/80 rounded-2xl card-shadow mt-8 mb-8">
         <header className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-indigo-700 dark:text-white tracking-tight">AI Horoscope 星座運勢占卜</h1>
+          <h1 className="text-3xl font-bold text-indigo-700 dark:text-indigo-200 mb-4 select-none tracking-tight drop-shadow-sm text-center">
+            星座運勢占卜
+          </h1>
           <button
             className="text-sm text-indigo-500 hover:underline px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
             onClick={() => setPage('settings')}
@@ -69,7 +71,8 @@ function App() {
         ) : (
           <>
             <HoroscopeForm onSubmit={handleFetchHoroscope} loading={loading} />
-            <div className="flex items-center gap-2 mt-4 mb-2">
+            {/*
+            <div className="flex items-center gap-2 mb-3">
               <input
                 id="push-reminder"
                 type="checkbox"
@@ -81,11 +84,12 @@ function App() {
                 啟用每日運勢提醒（需瀏覽器支援）
               </label>
             </div>
+            */}
             <HoroscopeResult result={result} loading={loading} error={error} />
           </>
         )}
       </div>
-      <footer className="text-xs text-gray-400 mt-auto mb-2 select-none"> 2025 AI Horoscope</footer>
+      <footer className="text-xs text-gray-400 mt-auto mb-2 select-none"> 2025 星座運勢占卜</footer>
     </div>
   );
 }
